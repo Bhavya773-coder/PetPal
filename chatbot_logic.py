@@ -8,40 +8,39 @@ def get_bot_response(message):
     message = message.lower()
 
     # Medicines
-    for med_name, info in kb["medicines"].items():
-        if med_name.lower() in message:
-            return f"**{med_name}**: {info['use']} \n\n**Dosage**: {info['dosage']} \n**Precautions**: {info['precautions']}"
+    for med in kb.get("medicines", []):
+        if med["name"].lower() in message:
+            return f"**{med['name']}**: {med['info']}"
 
-    # Feeding
-    if "feed" in message or "food" in message:
-        if "kitten" in message:
-            return f"Kitten Feeding Tip: {kb['feeding']['kitten']}"
-        elif "senior" in message:
-            return f"Senior Cat Feeding Tip: {kb['feeding']['senior']}"
-        else:
-            return f"Adult Cat Feeding Tip: {kb['feeding']['adult']}"
+    # Vaccines
+    for vac in kb.get("vaccines", []):
+        if vac["name"].lower() in message:
+            return f"**{vac['name']} Vaccine**: {vac['info']}"
 
-    # Grooming
-    if "groom" in message or "nail" in message or "bath" in message or "brush" in message:
-        return (
-            f"Grooming Tips:\n"
-            f"- Brushing: {kb['grooming']['brushing']}\n"
-            f"- Bathing: {kb['grooming']['bathing']}\n"
-            f"- Nail Trimming: {kb['grooming']['nail_trim']}"
-        )
+    # Diseases
+    for disease in kb.get("diseases", []):
+        if disease["name"].lower() in message:
+            return f"**{disease['name']}**: {disease['info']}"
 
-    # Illness or symptoms
-    for symptom, advice in kb["illness_signs"].items():
-        if symptom in message:
-            return f"If your cat is experiencing {symptom}, {advice}"
+    # Behavior
+    for behavior in kb.get("behavior", []):
+        if behavior["name"].lower() in message:
+            return f"**Behavior Tip - {behavior['name']}**: {behavior['info']}"
 
-    # Toxic foods
-    if "toxic" in message or "not eat" in message or "dangerous food" in message:
-        return "These foods are toxic to cats:\n" + ", ".join(kb["toxic_foods"])
+    # Diet
+    for diet in kb.get("diet", []):
+        if diet["name"].lower() in message:
+            return f"**Diet for {diet['name']} Cats**: {diet['info']}"
 
-    # FAQs
-    for question, answer in kb["faq"].items():
-        if question in message:
-            return answer
+    # Emergency
+    for emergency in kb.get("emergency", []):
+        if emergency["name"].lower() in message:
+            return f"**Emergency - {emergency['name']}**: {emergency['info']}"
 
-    return "I'm still learning! Try asking about cat medicine, feeding, grooming, or illnesses."
+    # FAQs (keyword matching)
+    for faq in kb.get("faq", []):
+        question = faq["question"].lower()
+        if question in message or any(word in message for word in question.split()):
+            return faq["answer"]
+
+    return "I'm still learning! Try asking about medicines, vaccines, diseases, diet, behavior, or emergencies for your cat."
