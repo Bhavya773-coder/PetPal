@@ -1,0 +1,20 @@
+{
+    "dog": {
+        "puppy": [
+            "6-8 weeks: DHPP, Leptospirosis",
+            "12-16 weeks: DHPP, Leptospirosis, Rabies"
+        ],
+        "adult": [
+            "Annual booster: DHPP, Leptospirosis, Rabies"
+        ]
+    },
+    "cat": {
+        "kitten": [
+            "8-9 weeks: FVRCP, Leukemia",
+            "12-16 weeks: FVRCP, Rabies"
+        ],
+        "adult": [
+            "Annual booster: FVRCP, Rabies"
+        ]
+    }
+}

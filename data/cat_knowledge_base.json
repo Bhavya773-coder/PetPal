@@ -1,0 +1,63 @@
+{
+    "medicines": [
+      {
+        "name": "Amoxicillin",
+        "info": "Used to treat bacterial infections. Dosage: 5-10 mg per pound every 12 hours. Precaution: complete the full course."
+      },
+      {
+        "name": "Metronidazole",
+        "info": "Used for diarrhea and some parasites. May cause nausea. Dosage: 7.5 mg/lb twice daily for 5–7 days."
+      }
+    ],
+    "vaccines": [
+      {
+        "name": "Rabies",
+        "info": "Given at 3 months, then boosters every 1–3 years. Legally required in many areas."
+      },
+      {
+        "name": "FVRCP",
+        "info": "Protects against viral rhinotracheitis, calicivirus, and panleukopenia. Given at 6-8 weeks and boosted regularly."
+      }
+    ],
+    "diseases": [
+      {
+        "name": "Feline Leukemia Virus (FeLV)",
+        "info": "Causes immune suppression. Symptoms: weight loss, pale gums. Vaccine available."
+      },
+      {
+        "name": "Feline Diabetes",
+        "info": "Symptoms: increased thirst, urination. Needs insulin and diet control."
+      }
+    ],
+    "behavior": [
+      {
+        "name": "Scratching",
+        "info": "Normal behavior. Provide scratching posts to prevent furniture damage."
+      },
+      {
+        "name": "Litter Box Avoidance",
+        "info": "May indicate stress or UTI. Clean box daily and rule out medical issues."
+      }
+    ],
+    "diet": [
+      {
+        "name": "Kitten",
+        "info": "High-protein kitten food 3–4 times a day. Needs taurine, DHA."
+      },
+      {
+        "name": "Senior",
+        "info": "Low-calorie diet with joint supplements. Feed twice a day."
+      }
+    ],
+    "emergency": [
+      {
+        "name": "Choking",
+        "info": "Open mouth and remove object if safe. Seek vet immediately."
+      },
+      {
+        "name": "Heatstroke",
+        "info": "Symptoms: panting, drooling, collapse. Cool with wet towel, go to vet."
+      }
+    ]
+  }
+  
